@@ -47,6 +47,18 @@
       "style": {
         "navigationBarTitleText": "申请单审批"
       }
+    },
+    {
+      "path": "pages/myExaminationAndApproval/myExaminationAndApproval",
+      "style": {
+        "navigationBarTitleText": "我审批的"
+      }
+    },
+    {
+      "path": "pages/myApplyFor/myApplyFor",
+      "style": {
+        "navigationBarTitleText": "我申请的"
+      }
     }
   ],
   "tabBar": {
@@ -61,14 +73,14 @@
         "selectedIconPath": "static/img/userHL.png"
       },
       {
-        "pagePath": "pages/main/main",
-        "text": "登录",
+        "pagePath": "pages/myExaminationAndApproval/myExaminationAndApproval",
+        "text": "我审批的",
         "iconPath": "static/img/home.png",
         "selectedIconPath": "static/img/homeHL.png"
       },
       {
-        "pagePath": "pages/user/user",
-        "text": "我的",
+        "pagePath": "pages/myApplyFor/myApplyFor",
+        "text": "我申请的",
         "iconPath": "static/img/user.png",
         "selectedIconPath": "static/img/userHL.png"
       }
