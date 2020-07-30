@@ -95,19 +95,7 @@
         <div></div>
         <div>审批流程</div>
       </div>
-      <div class="steps">
-        <div class="steps-main" v-for="(item,i) in 15" :key="i">
-          <div class="line" :class="`line${i%5+1}`">
-            <div></div>
-            <div></div>
-          </div>
-          <div class="inner">
-            <strong>主管审批人</strong>
-            <img src="@/static/img/person.png" alt />
-            <span>王晓敏</span>
-          </div>
-        </div>
-      </div>
+      <hu-steps></hu-steps>
     </div>
     <div class="bg-div"></div>
     <div class="bottom-div">
