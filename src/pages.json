@@ -102,7 +102,7 @@
   "globalStyle": {
     "navigationBarTextStyle": "white",
     "navigationBarBackgroundColor": "#0faeff",
-    "backgroundColor": "#e8ebf1"
-    // "navigationStyle": "custom"
+    "backgroundColor": "#e8ebf1",
+    "navigationStyle": "custom"
   }
 }

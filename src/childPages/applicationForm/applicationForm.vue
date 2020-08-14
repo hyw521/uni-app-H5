@@ -24,28 +24,7 @@
             placeholder="请输入申请人"
           />
         </evan-form-item>
-        <evan-form-item label="所属部门" prop="phone">
-          <picker
-            mode="selector"
-            :range="selectorList"
-            range-key="label"
-            value="1"
-            @change="changeNumber"
-          >
-            <view class="uni-input" v-text="formList.place"></view>
-          </picker>
-        </evan-form-item>
-        <evan-form-item label="申请类型" prop="place">
-          <picker
-            mode="selector"
-            :range="selectorList"
-            range-key="label"
-            value="1"
-            @change="changeNumber"
-          >
-            <view class="uni-input" v-text="formList.place"></view>
-          </picker>
-        </evan-form-item>
+
         <evan-form-item label="申请原因" prop="email">
           <input
             class="form-input"
@@ -62,6 +41,40 @@
             placeholder="请输入申请金额"
           />
         </evan-form-item>
+        <evan-form-item label="所属部门" prop="phone">
+          <picker
+            mode="selector"
+            :range="selectorList"
+            range-key="label"
+            value="1"
+            @change="changeNumber"
+          >
+            <div class="select_icon_div">
+              <div></div>
+              <div>
+                <view class="uni-input" v-text="formList.place"></view>
+                <uni-icons size="16" type="arrowright"></uni-icons>
+              </div>
+            </div>
+          </picker>
+        </evan-form-item>
+        <evan-form-item label="申请类型" prop="place">
+          <picker
+            mode="selector"
+            :range="selectorList"
+            range-key="label"
+            value="1"
+            @change="changeNumber"
+          >
+            <div class="select_icon_div">
+              <div></div>
+              <div>
+                <view class="uni-input" v-text="formList.place"></view>
+                <uni-icons size="16" type="arrowright"></uni-icons>
+              </div>
+            </div>
+          </picker>
+        </evan-form-item>
         <evan-form-item label="要求完成时间：" prop="place">
           <picker
             mode="selector"
@@ -70,7 +83,13 @@
             value="1"
             @change="changeNumber"
           >
-            <view class="uni-input" v-text="formList.place"></view>
+            <div class="select_icon_div">
+              <div></div>
+              <div>
+                <view class="uni-input" v-text="formList.place"></view>
+                <uni-icons size="16" type="arrowright"></uni-icons>
+              </div>
+            </div>
           </picker>
         </evan-form-item>
       </evan-form>
