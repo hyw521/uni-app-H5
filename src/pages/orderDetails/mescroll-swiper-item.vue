@@ -7,7 +7,7 @@
     ref="mescrollRef"
     @init="mescrollInit"
     height="100%"
-    top="60"
+    top="164"
     :down="downOption"
     @down="downCallback"
     :up="upOption"
@@ -60,6 +60,10 @@ export default {
       default() {
         return []
       }
+    },
+    searchValue: {
+      type: String,
+      default: () => ''
     }
   },
   methods: {
@@ -70,10 +74,19 @@ export default {
       // 下拉刷新的回调,默认重置上拉加载列表为第一页 (自动执行 page.num=1, 再触发upCallback方法 )
       this.mescroll.resetUpScroll()
     },
+    //主动触发下拉刷新
+    mainRefresh() {
+      this.mescroll.resetUpScroll()
+    },
+    search() {
+      this.mescroll.scrollTo(0, 300)
+      this.mescroll.resetUpScroll()
+    },
     /*上拉加载的回调: 其中page.num:当前页 从1开始, page.size:每页数据条数,默认10 */
     upCallback(page) {
       //联网加载数据
       let keyword = this.tabs[this.i].name
+      console.log(this.searchValue, 'searchValue')
       apiSearch(page.num, page.size, keyword).then(curPageData => {
         //联网成功的回调,隐藏下拉刷新和上拉加载的状态;
         this.mescroll.endSuccess(curPageData.length);
