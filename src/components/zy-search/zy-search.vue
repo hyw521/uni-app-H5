@@ -94,6 +94,9 @@ export default {
       hList: uni.getStorageSync('search_cache')		//历史记录
     }
   },
+  created() {
+    console.log(1)
+  },
   methods: {
     searchStart() {	//触发搜索
       let _this = this;
