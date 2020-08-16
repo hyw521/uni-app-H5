@@ -138,7 +138,6 @@ export default {
         }]
       },
       hideRequiredAsterisk: false,
-
     }
   },
   methods: {

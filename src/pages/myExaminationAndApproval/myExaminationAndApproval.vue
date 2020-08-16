@@ -3,19 +3,25 @@
     <div class="first">
       <div class="search">
         <uni-icons type="search" />
-        <input type="text" v-model="value" placeholder="搜索" placeholder-style="color:#bbbbbb" />
+        <input placeholder="搜索" placeholder-style="color:#bbbbbb" type="text" v-model="value" />
       </div>
     </div>
+    <w-loading click="true" mask="true" ref="loading" text="加载中.."></w-loading>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       value: ''
 
     }
+  },
+  created () {
+    this.$nextTick(() => {
+      this.$refs.loading.open()
+    })
   }
 }
 </script>

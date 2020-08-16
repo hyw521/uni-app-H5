@@ -1,23 +1,23 @@
 <template>
-  <view id="orderDetails">
+  <view id="orderDetails" v-if="isShow">
     <div class="top_nav">
       <div class="search_h">
         <zy-search
           :is-focus="false"
-          :theme="themeClass"
+          :placeholder="placeholder"
           :show-want="true"
           :speechEngine="speechEngine"
-          :placeholder="placeholder"
+          :theme="themeClass"
           @getSearchText="getSearchText"
         ></zy-search>
       </div>
       <!-- 当设置tab-width,指定每个tab宽度时,则不使用flex布局,改用水平滑动 -->
-      <me-tabs v-model="tabIndex" :tabs="tabs" :fixed="true" @change="tabChange"></me-tabs>
+      <me-tabs :fixed="true" :tabs="tabs" @change="tabChange" v-model="tabIndex"></me-tabs>
     </div>
 
-    <swiper :style="{height: height}" :current="tabIndex" @change="swiperChange">
-      <swiper-item v-for="(tab,i) in tabs" :key="i">
-        <mescroll-item ref="child" :i="i" :index="tabIndex" :tabs="tabs" :searchValue="searchValue"></mescroll-item>
+    <swiper :current="tabIndex" :style="{height: height}" @change="swiperChange">
+      <swiper-item :key="i" v-for="(tab,i) in tabs">
+        <mescroll-item :i="i" :index="tabIndex" :searchValue="searchValue" :tabs="tabs" ref="child"></mescroll-item>
       </swiper-item>
     </swiper>
   </view>
@@ -30,8 +30,9 @@ export default {
   components: {
     MescrollItem
   },
-  data() {
+  data () {
     return {
+      isShow: false,
       placeholder: '请输入订单号',
       themeClass: 'block',
       speechEngine: 'baidu', //语音识别引擎
@@ -44,9 +45,22 @@ export default {
       tabIndex: 0 // 当前tab的下标
     }
   },
+  onShow () {
+    this.isShow = true
+    console.log(11111)
+  },
+  onTabItemTap () {
+    console.log('onTabItemTap')
+  },
+  onUnload () {
+    console.log('onUnload')
+  },
+  onHide () {
+    this.isShow = false
+  },
   methods: {
     //获取搜索输入值
-    getSearchText(value) {
+    getSearchText (value) {
       this.searchValue = value
       this.$nextTick(() => {
         this.$refs.child[0].search()
@@ -57,14 +71,14 @@ export default {
       })
     },
     // 轮播菜单
-    swiperChange(e) {
+    swiperChange (e) {
       this.tabIndex = e.detail.current
     },
-    tabChange() {
+    tabChange () {
       this.$refs.child[0].mainRefresh()
     }
   },
-  onLoad() {
+  onLoad () {
     // 需要固定swiper的高度
     this.height = uni.getSystemInfoSync().windowHeight + 'px'
   }
@@ -72,5 +86,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@/style/orderDetails.scss";
+@import '@/style/orderDetails.scss';
 </style>
