@@ -1,0 +1,63 @@
+@import "@/style/global.scss";
+page {
+  background: $uni-color-white;
+}
+#h-login{
+  padding: 0rpx 30rpx;
+  .title {
+    font-size: 48rpx;
+    font-weight: bold;
+    margin-top: 80rpx;
+  }
+  .phone{
+    margin-top: 40rpx;
+    display: flex;
+    align-items: center;
+    span{
+      width: 60rpx;
+      margin-right: 20rpx;
+      font-size: 32rpx;
+    }
+    &>div{
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60rpx;
+    }
+  }
+  .input-code{
+    margin-top: 40rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60rpx;
+    .ic-sm {
+      width: 32rpx;
+      height: 34rpx;
+      margin: 0rpx 20rpx 0rpx 28rpx;
+    }
+    input{
+      flex: 1;
+    }
+  }
+  .button-div{
+    margin-top: 80rpx;
+  }
+  .gray{
+    margin-top: 20rpx;
+  }
+  .log-box {
+    padding-bottom: 10rpx;
+    border-bottom: 2rpx solid $uni-border-color;
+  }
+  .btn-code {
+    margin: 0;
+    font-size: 16rpx;
+    background: $uni-color-white;
+    color: #192f59;
+  }
+  .btn-code:after {
+    border: 0;
+  }
+}

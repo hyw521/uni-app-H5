@@ -1,10 +1,7 @@
 <template>
   <div>
-    <div class="first">
-      <div class="search">
-        <uni-icons type="search" />
-        <input placeholder="搜索" placeholder-style="color:#bbbbbb" type="text" v-model="value" />
-      </div>
+    <div>
+      <h-login />
     </div>
     <w-loading click="true" mask="true" ref="loading" text="加载中.."></w-loading>
   </div>
@@ -19,12 +16,17 @@ export default {
     }
   },
   created() {
-    this.$nextTick(() => {
-      this.$refs.loading.open()
-    })
-    setTimeout(() => {
-      this.$refs.loading.close()
-    }, 3600)
+    // this.$nextTick(() => {
+    //   this.$refs.loading.open()
+    // })
+    // setTimeout(() => {
+    //   this.$refs.loading.close()
+    // }, 3600)
+  },
+  methods: {
+    open() {
+      this.$refs.popup.open()
+    }
   }
 }
 </script>
