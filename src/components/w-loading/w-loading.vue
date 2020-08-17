@@ -28,25 +28,25 @@ export default {
     mask: Boolean | String,
     click: Boolean | String,
   },
-  data () {
+  data() {
     return {
       show: false
     };
   },
   methods: {
-    preventTouchMove () {
+    preventTouchMove() {
       console.log('stop user scroll it!');
       return;
     },
-    Mclose () {
+    Mclose() {
       if (this.click == 'false' || this.click == false) {
         this.show = false
       }
     },
-    open () {
+    open() {
       this.show = true
     },
-    close () {
+    close() {
       this.show = false
     }
   }
@@ -206,6 +206,7 @@ export default {
     -webkit-transform: translateX(0) translateY(0) rotate(360deg);
     transform: translateX(0) translateY(0) rotate(360deg);
     border-radius: 0;
+    background: #f1c40f;
   }
 }
 @-webkit-keyframes loading14-3 {
@@ -229,6 +230,7 @@ export default {
     -webkit-transform: translateX(0) translateY(0) rotate(-360deg);
     transform: translateX(0) translateY(0) rotate(-360deg);
     border-radius: 0;
+    background: #2ecc71;
   }
 }
 @keyframes loading14-3 {
@@ -252,6 +254,7 @@ export default {
     -webkit-transform: translateX(0) translateY(0) rotate(-360deg);
     transform: translateX(0) translateY(0) rotate(-360deg);
     border-radius: 0;
+    background: #2ecc71;
   }
 }
 @-webkit-keyframes loading14-4 {
@@ -275,6 +278,7 @@ export default {
     -webkit-transform: translateX(0) translateY(0) rotate(360deg);
     transform: translateX(0) translateY(0) rotate(360deg);
     border-radius: 0;
+    background: #e74c3c;
   }
 }
 @keyframes loading14-4 {
@@ -298,6 +302,7 @@ export default {
     -webkit-transform: translateX(0) translateY(0) rotate(360deg);
     transform: translateX(0) translateY(0) rotate(360deg);
     border-radius: 0;
+    background: #e74c3c;
   }
 }
 </style>

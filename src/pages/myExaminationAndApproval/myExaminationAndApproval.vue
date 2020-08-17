@@ -12,16 +12,19 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       value: ''
 
     }
   },
-  created () {
+  created() {
     this.$nextTick(() => {
       this.$refs.loading.open()
     })
+    setTimeout(() => {
+      this.$refs.loading.close()
+    }, 3600)
   }
 }
 </script>
